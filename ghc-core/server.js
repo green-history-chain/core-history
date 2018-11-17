@@ -8,6 +8,7 @@ const Routing = ('routing')
 const logger = ('lib/logger')
 const dpt = ('lib/p2p')
 const config = ('config')
+const wizblApi = ('lib.wizblApi')
 
 
 const token = process.env.TELEGRAM_TOKEN || '715239380:AAG6KnKR5JmOJfh9QwShtaFuof9px2XEEls'
