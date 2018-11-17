@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "development": "nodemon --exec babel-node server.js",
-    "start": "npm run build && node dist/server.js",
-    "build": "babel server.js -d dist && babel app -d dist/app",
+    "start": "node ./server.js",
+    "build": "babel server.js ",
     "test-child-chain": "mocha --require babel-register --require babel-polyfill --timeout 1600000 --reporter spec ./test/test_child_chain.js",
     "test-create-deposits": "mocha --require babel-register --require babel-polyfill --timeout 160000 --reporter spec ./test/test_create_deposits.js",
     "test-api-load": "mocha --require babel-register --require babel-polyfill --timeout 160000 --reporter spec ./test/test_api_load.js",
