@@ -3,7 +3,7 @@
 import {getBlock} from 'child-chain'
 import {submitBlock} from 'child-chain'
 import {parseM} from 'lib/utils'
-import {sign, verify} from 'lib/bls'
+// import {sign, verify} from 'lib/bls'
 import web3 from 'lib/web3'
 import {RightsHandler, validatorsQueue,
   initConsensus} from 'consensus'
@@ -47,18 +47,18 @@ class BlockController {
       res.statusCode = 409
       return res.end(JSON.stringify({message: 'wait for the validator queue'}))
     }
-    let verifySignature =
+    /* let verifySignature =
       await verify(block.signature, address, block.blockHash)
     if (!verifySignature) {
       res.statusCode = 403
       return res.end(JSON.stringify({message: 'signature is not valid'}))
-    }
+    } */
     submitBlock(address, block.blockHash)
     await validatorsQueue.setNextValidator()
     return res.end(JSON.stringify('ok'))
   }
 
-  static async sign(req, res) {
+  /* static async sign(req, res) {
     await parseM(req)
     try {
       let {address, blockHash} = req.body
@@ -76,7 +76,7 @@ class BlockController {
       res.statusCode = 400
       return res.end(error.toString())
     }
-  }
+  } */
 
   static async proof(req, res) {
     await parseM(req)

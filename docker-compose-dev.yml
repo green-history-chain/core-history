@@ -22,7 +22,7 @@ services:
       - "30301:30301"
       - "30301:30301/udp"
     volumes:
-      - "./plasma-core:/usr/src/app"
+      - "./ghc-core:/usr/src/app"
       - "./data/logs/ghc-core:/usr/src/app/app/logs"
       - "./data/ethernode/geth_ipc:/usr/src/geth_ipc:ro"
     links:
