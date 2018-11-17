@@ -8,12 +8,14 @@ const controllers = {
   TxController,
   BlockController,
 }
+
 /** Class representing a routing. */
 class Routing {
   static capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
   }
   static route(req, res) {
+    console.log('req :', req);
     let parts = req.url.split('/')
     if (parts.length <= 2) {
       if (DefController.hasOwnProperty(parts[1])) {

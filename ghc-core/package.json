@@ -35,6 +35,7 @@
     "merkle-tools": "1.4.0",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
+    "node-telegram-bot-api": "^0.30.0",
     "npm": "^6.1.0",
     "redis": "^2.8.0",
     "request": "^2.83.0",
