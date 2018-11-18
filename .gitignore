@@ -21,8 +21,5 @@ truffle/build
 /truffle/app/dist
 
 #ethernode
-ethernode/devnet/keystore
-ethernode/devnet/password
-ethernode/rinkeby/keystore
-ethernode/rinkeby/password
+
 .vscode/

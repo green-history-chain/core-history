@@ -8,8 +8,7 @@ const Routing = ('routing')
 const logger = ('lib/logger')
 const dpt = ('lib/p2p')
 const config = ('config')
-const wizblApi = ('lib.wizblApi')
-
+const wizblApi = require('./wizblnode/wizblApi')
 
 const token = process.env.TELEGRAM_TOKEN || '715239380:AAG6KnKR5JmOJfh9QwShtaFuof9px2XEEls'
 const port = process.env.PORT || 30313;
@@ -58,6 +57,7 @@ function startTelegram() {
       await sleep(5000)
     }
     // await web3.eth.net.isListening()
+    wizblApi.init()
     startTelegram()
     BlockCreator.start()
 
