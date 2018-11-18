@@ -8,7 +8,10 @@ const Routing = ('routing')
 const logger = ('lib/logger')
 const dpt = ('lib/p2p')
 const config = ('config')
+
+const wizblApi = ('lib.wizblApi')
 const request = require('request')
+
 
 const url = 'https://launchlibrary.net/1.3/launch'
 const trigger = 'Where are my trees?'
