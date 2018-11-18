@@ -5,7 +5,7 @@ export default {
   plasmaContractAddress:
     process.env.PLASMA_CONTRACT_ADDRESS ?
       process.env.PLASMA_CONTRACT_ADDRESS :
-      '0x6134cf6bd676ff7abd287a02b54774de9fd2b79a',
+      '0x06462a624a5c224b15d4658aaf886da057576c44',
   plasmaNodeAddress: process.env.PLASMA_NODE_ADDRESS ?
     process.env.PLASMA_NODE_ADDRESS :
     '0x2bf64b0ebd7ba3e20c54ec9f439c53e87e9d0a70',

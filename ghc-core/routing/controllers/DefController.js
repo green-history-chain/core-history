@@ -6,6 +6,7 @@ import {parseM} from 'lib/utils'
 import {txMemPool} from 'child-chain/TxMemPool'
 import {stateValidators, validatorsQueue} from 'consensus'
 import web3 from 'lib/web3'
+import contractHandler from 'root-chain'
 import {getUtxosForAddress} from 'child-chain/validator/transactions'
 
 /** Class representing a default controller. */
@@ -48,6 +49,26 @@ class DefController {
       return res.end(error.toString())
     }
   }
+
+  static async getTokensCount(req, res) {
+    await parseM(req)
+    const {owner} = req.body
+    console.log('owner', owner);
+    
+    // if (!owner) {
+    //   res.statusCode = 400
+    //   return res.end(JSON.stringify('wrong request parameters'))
+    // }
+    try {
+      let answer = await contractHandler.contract.methods.getTokensCount(owner)
+        .send({from: config.plasmaNodeAddress, gas: 150000}) 
+      res.end(JSON.stringify(answer))
+    } catch (error) {
+      res.statusCode = 400
+      return res.end(error.toString())
+    }
+  }
+
 
   static async getCandidates(req, res) {
     try {
