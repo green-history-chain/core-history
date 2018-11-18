@@ -29,7 +29,7 @@ sleep 3
 echo -e "geth start devnet log_level:${VERBOSITY}"
 
 geth \
-  --networkid 58546 \
+  --networkid 58545 \
   --rpcvhosts="*" \
   --nodiscover \
   --verbosity ${VERBOSITY} \

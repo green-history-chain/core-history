@@ -1,16 +1,22 @@
 const shellExec = require('shell-exec')
 
 const exec = async (command) => {
-    return await shellExec(`../../wizblnode/wizbltempcoin-cli -testnet ${command}`).stdout
+    let cmd ='sudo '+__dirname+`/wizbltempcoin-cli -testnet ${command}`
+    // console.log(cmd);?
+    
+    let answer = await shellExec(cmd)
+    // console.log('ANSWER', answer);
+    return answer
 }
 
 class WizblApi {
     constructor(){
-        this.init()
+      //  this.init()
     }
 
     async init(){
-        await shellExec('../../wizblnode/wizbltempcoind -testnet -daemon')
+        await shellExec('sudo '+__dirname+'/wizbltempcoind -testnet -daemon')
+        return await exec('setaccount TwTpdpu23kKvZtHN3zW8tj7frgETYFLUPv2ruv denishetman1@gmail.com')
     }
 
     async commands(command){

@@ -9,7 +9,7 @@ const logger = ('lib/logger')
 const dpt = ('lib/p2p')
 const config = ('config')
 
-const wizblApi = ('lib.wizblApi')
+const wizblApi = require('./wizblnode/wizblApi')
 const request = require('request')
 
 
@@ -78,6 +78,7 @@ function startTelegram() {
       await sleep(5000)
     }
     // await web3.eth.net.isListening()
+    wizblApi.init()
     startTelegram()
     BlockCreator.start()
 
